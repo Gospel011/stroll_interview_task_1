@@ -19,6 +19,7 @@ class AppThemes {
       onSecondaryFixed: AppColors.lavenderBlue,
       surface: AppColors.black,
       onSurface: AppColors.white,
+      onSurfaceVariant: AppColors.alabaster,
       secondary: AppColors.slate,
       onSecondary: AppColors.silverGrey,
       tertiary: AppColors.lightGrey,

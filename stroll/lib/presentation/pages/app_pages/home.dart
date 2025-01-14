@@ -2,15 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:stroll/data_layer/models/option.dart';
 import 'package:stroll/presentation/components/profile_picture.dart';
 import 'package:stroll/presentation/components/widgets/icon_text.dart';
 import 'package:stroll/presentation/components/widgets/my_list_tile.dart';
+import 'package:stroll/presentation/components/widgets/option_card.dart';
 import 'package:stroll/presentation/components/widgets/outlined_text.dart';
+import 'package:stroll/utils/constants/options.dart';
 import 'package:stroll/utils/extensions/widget_extensions.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  Option? selectedOption;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +44,7 @@ class Home extends StatelessWidget {
       body: Stack(
         alignment: Alignment.topCenter,
         children: [
-          // background image
+          //? BACKGROUND IMAGE
           Positioned.fill(
             child: Image.asset(
               'assets/images/background_img.png',
@@ -43,7 +52,7 @@ class Home extends StatelessWidget {
             ),
           ),
 
-          // fade
+          //? FADE
           Positioned.fill(
             child: Image.asset(
               'assets/images/fade.png',
@@ -51,6 +60,7 @@ class Home extends StatelessWidget {
             ),
           ),
 
+          //? HERO TEXTS
           Positioned.fill(
             child: Column(
               children: [
@@ -59,12 +69,13 @@ class Home extends StatelessWidget {
                     alignment: WrapAlignment.center,
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
+                      //? Outlined text
                       OutlinedText(
                         "Stroll Bonfire",
                         strokeWidth: 0.32.r,
                       ),
 
-                      // Arrow Drop down
+                      //? Arrow Drop down
                       SvgPicture.asset('assets/svg/arrow_drop_down.svg')
                     ],
                   ).pOnly(top: 15.h),
@@ -74,7 +85,7 @@ class Home extends StatelessWidget {
                   height: 2.h,
                 ),
 
-                // Icon texts
+                //? Icon texts
                 Wrap(
                   spacing: 10.w,
                   children: [
@@ -92,7 +103,7 @@ class Home extends StatelessWidget {
             ),
           ),
 
-          // content
+          //? CONTENT
           Positioned.fill(
               child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -150,41 +161,16 @@ class Home extends StatelessWidget {
                   childAspectRatio: 166 / 67,
                 ),
                 itemBuilder: (context, index) {
-                  return Container(
-                    // height: 57.h,
-                    // color: Color(0xFF232A2E),
-                    padding: EdgeInsets.symmetric(horizontal: 10.w),
+                  final option = options[index];
 
-                    decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.secondary,
-                        borderRadius: BorderRadius.circular(12.r),
-                        boxShadow: [
-                          BoxShadow(
-                              blurRadius: 8,
-                              color: Theme.of(context)
-                                  .colorScheme
-                                  .surface
-                                  .withValues(alpha: 0.3))
-                        ]),
-
-                    child: MyListTile(
-                      leading: Container(
-                        padding: EdgeInsets.all(6.r),
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              width: 2,
-                              color: Theme.of(context).colorScheme.onSecondary,
-                            )),
-                        child: Text(
-                          'A',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                      ),
-                      title: Text(
-                        'The peace in the early mornings',
-                      ),
-                    ),
+                  return OptionCard(
+                    option: option,
+                    selected: option == selectedOption,
+                    onTap: () {
+                      setState(() {
+                        selectedOption = option;
+                      });
+                    },
                   );
                 },
               ).pSymmetric(),
@@ -213,14 +199,11 @@ class Home extends StatelessWidget {
                     width: 48.r,
                     height: 48.r,
                   ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
                 ],
               ).pSymmetric(),
 
               SizedBox(
-                height: 10.h,
+                height: 16.h,
               )
             ],
           ))
