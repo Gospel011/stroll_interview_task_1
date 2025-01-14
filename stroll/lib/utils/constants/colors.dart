@@ -5,6 +5,7 @@ class AppColors {
   static const Color lavender = Color(0xFF8B88EF);
   static const Color lavenderBlue = Color(0xFFB3ADF6);
   static const Color softLavender = Color(0xFFCCC8FF);
+  static const Color lightLavender = Color(0xFFB5B2FF);
   static const Color charcoal = Color(0xFF020202);
   static const Color slate = Color(0xFF232A2E);
   static const Color white = Color(0xFFFFFFFF);

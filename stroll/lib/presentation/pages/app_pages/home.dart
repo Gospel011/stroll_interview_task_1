@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stroll/data_layer/models/option.dart';
 import 'package:stroll/presentation/components/profile_picture.dart';
 import 'package:stroll/presentation/components/widgets/icon_text.dart';
+import 'package:stroll/presentation/components/widgets/my_bottom_nav_bar_item.dart';
 import 'package:stroll/presentation/components/widgets/my_list_tile.dart';
 import 'package:stroll/presentation/components/widgets/option_card.dart';
 import 'package:stroll/presentation/components/widgets/outlined_text.dart';
@@ -28,16 +29,11 @@ class _HomeState extends State<Home> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SvgPicture.asset(
-              'assets/svg/card.svg',
-              width: 28.r,
-              height: 28.r,
-            ),
-            SvgPicture.asset('assets/svg/bonfire.svg',
-                width: 28.r, height: 28.r),
-            SvgPicture.asset('assets/svg/chat.svg', width: 28.r, height: 28.r),
-            SvgPicture.asset('assets/svg/profile.svg',
-                width: 28.r, height: 28.r),
+            MyBottomNavBarItem(asset: 'assets/svg/card.svg'),
+            MyBottomNavBarItem(
+                asset: 'assets/svg/bonfire.svg', showLabel: true),
+            MyBottomNavBarItem(asset: 'assets/svg/chat.svg', count: 10),
+            MyBottomNavBarItem(asset: 'assets/svg/profile.svg'),
           ],
         ).pSymmetric(horizontal: 16.w, vertical: 10.h),
       ),
