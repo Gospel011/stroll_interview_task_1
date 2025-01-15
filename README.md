@@ -13,6 +13,8 @@ The **data_layer** contains the repository and data models.
 
 The **repository** is the layer that communicates between the blocs, models and api_client.
 
+The **presentation** is the layer that contains all the visual elements that the user can interact with.
+
 The **api_client** is just a class responsible for communicating with the internet (Just like postman, but in code.).
 
 
