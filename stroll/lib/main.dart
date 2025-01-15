@@ -6,6 +6,7 @@ import 'package:stroll/presentation/pages/go_router_config.dart';
 import 'package:stroll/utils/themes/light_theme.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   final String path = (await getApplicationDocumentsDirectory()).path;
   HydratedBloc.storage = await HydratedStorage.build(
       storageDirectory: HydratedStorageDirectory(

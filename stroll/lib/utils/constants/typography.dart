@@ -9,7 +9,7 @@ class AppTypography {
     color: AppColors.alabaster,
     fontFamily: 'ProximaNova',
     fontSize: 34.sp,
-    height: 41.41.h / 34.sp,
+    height: 44.h / 34.sp,
     fontWeight: FontWeight.w400,
   );
 
