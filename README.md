@@ -23,16 +23,17 @@ The blocs react in response to ui events, handing off a request to the repositor
 
 # IMAGES
 ## iPhone 16
-![iPhone 16](https://github.com/user-attachments/assets/bfb1ad05-e338-4c5d-bddd-dbc1696042ba)
+<img src="https://github.com/user-attachments/assets/bfb1ad05-e338-4c5d-bddd-dbc1696042ba" alt="iPhone 16" style="width: 30%; height: auto;" />
 
 ## iPhone 16 pro max
-![iPhone 16 pro max ](https://github.com/user-attachments/assets/51baf5ac-0f5a-4415-8c8e-b594cdbd3936)
+<img src="https://github.com/user-attachments/assets/51baf5ac-0f5a-4415-8c8e-b594cdbd3936" alt="iPhone 16 pro max" style="width: 30%; height: auto;" />
 
 ## Techno Spark 4
-![Techno Spark 4](https://github.com/user-attachments/assets/4e786a14-3773-4d78-9dca-c2afa74731a3)
+<img src="https://github.com/user-attachments/assets/4e786a14-3773-4d78-9dca-c2afa74731a3" alt="Techno Spark 4" style="width: 30%; height: auto;" />
+
 
 ## Redmi note 13
-![Redmi note 13](https://github.com/user-attachments/assets/24b9c198-8c20-4114-be64-4dc1ced1a583)
+<img src="https://github.com/user-attachments/assets/24b9c198-8c20-4114-be64-4dc1ced1a583" alt="Redmi note 13" style="width: 30%; height: auto;" />
 
 
 
